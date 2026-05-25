@@ -33,29 +33,33 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">Login</h2>
-      
+    <div className="glass-panel rounded-3xl p-6 sm:p-8">
+      <div className="mb-6">
+        <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-600">Secure access</p>
+        <h2 className="mt-2 text-2xl font-bold text-slate-950">Login to dashboard</h2>
+        <p className="mt-1 text-sm text-slate-500">Use your Firebase account to manage shop records.</p>
+      </div>
+
       <form onSubmit={handleLogin} className="space-y-4">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+          <label className="block text-sm font-semibold text-slate-700 mb-2">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="modern-input w-full rounded-2xl px-4 py-3 text-slate-900"
             placeholder="your@email.com"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+          <label className="block text-sm font-semibold text-slate-700 mb-2">Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="modern-input w-full rounded-2xl px-4 py-3 text-slate-900"
             placeholder="Your password"
             required
           />
@@ -70,7 +74,7 @@ const Login = ({ setUser }) => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-3 rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full rounded-2xl bg-slate-950 py-3.5 font-semibold text-white shadow-xl shadow-slate-950/15 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {loading ? 'Logging in...' : 'Login'}
         </button>

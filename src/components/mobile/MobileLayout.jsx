@@ -3,19 +3,19 @@ import { Home, Package, ShoppingCart, TrendingUp, Users, Plus } from 'lucide-rea
 
 const MobileLayout = ({ currentView, setCurrentView, onAddClick, children }) => {
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
+    <div className="app-shell min-h-screen pb-24">
       {/* Mobile Header */}
-      <header className="bg-gradient-to-r from-blue-600 to-blue-700 text-white sticky top-0 z-40 shadow-lg">
+      <header className="sticky top-0 z-40 bg-slate-950 text-white shadow-xl shadow-slate-950/20">
         <div className="px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-xl font-bold">Commission Shop</h1>
-              <p className="text-xs text-blue-100 mt-0.5">Commission Accounts</p>
+              <p className="text-xs text-slate-300 mt-0.5">Commission Accounts</p>
             </div>
             {currentView === 'inventory' || currentView === 'sales' ? (
               <button
                 onClick={onAddClick}
-                className="bg-white text-blue-600 rounded-full p-3 shadow-lg hover:bg-blue-50 transition"
+                className="rounded-2xl bg-emerald-400 p-3 text-slate-950 shadow-lg shadow-emerald-500/20 hover:bg-emerald-300"
               >
                 <Plus className="w-6 h-6" />
               </button>
@@ -30,7 +30,7 @@ const MobileLayout = ({ currentView, setCurrentView, onAddClick, children }) => 
       </main>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50">
+      <nav className="fixed bottom-3 left-3 right-3 z-50 rounded-3xl border border-slate-200/80 bg-white/95 shadow-2xl shadow-slate-950/15 backdrop-blur">
         <div className="flex justify-around py-2">
           <NavButton
             icon={<Home className="w-5 h-5" />}
@@ -72,9 +72,9 @@ const NavButton = ({ icon, label, active, onClick }) => (
   <button
     onClick={onClick}
     className={`flex flex-col items-center justify-center px-4 py-2 transition ${
-      active 
-        ? 'text-blue-600' 
-        : 'text-gray-400 hover:text-gray-600'
+      active
+        ? 'text-slate-950'
+        : 'text-slate-400 hover:text-slate-600'
     }`}
   >
     {icon}
